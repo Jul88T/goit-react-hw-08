@@ -1,0 +1,16 @@
+.userMenu {
+  display: flex;
+  gap: 20px;
+}
+
+.logoutBtn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  background-color: #d32f2f;
+}

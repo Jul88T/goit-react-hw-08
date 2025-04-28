@@ -1,0 +1,33 @@
+.section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.header {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.searchBox {
+  margin-bottom: 20px;
+}
+
+.contactList {
+  list-style: none;
+  padding: 0;
+}
+
+.contactItem {
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.contactItem:hover {
+  background-color: #f1f1f1;
+}
