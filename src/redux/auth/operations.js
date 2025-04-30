@@ -32,7 +32,14 @@ export const login = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      if (error.response && error.response.status === 400) {
+        return thunkAPI.rejectWithValue(
+          "Invalid email or password. Please try again."
+        );
+      }
+      return thunkAPI.rejectWithValue(
+        "An unexpected error occurred. Please try again."
+      );
     }
   }
 );
