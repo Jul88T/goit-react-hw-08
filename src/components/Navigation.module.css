@@ -34,5 +34,5 @@
 .leftSide {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* расстояние между лого и "Contacts" */
+  gap: 1.5rem;
 }
