@@ -11,7 +11,7 @@ import RestrictedRoute from "./components/RestrictedRoute";
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
+import RegistrationPage from "./pages/RegistrationPage";
 import ContactsPage from "./pages/ContactsPage";
 
 const App = () => {
@@ -39,7 +39,7 @@ const App = () => {
           element={
             <RestrictedRoute
               redirectTo="/contacts"
-              component={<RegisterPage />}
+              component={<RegistrationPage />}
             />
           }
         />

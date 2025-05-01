@@ -13,3 +13,8 @@
   opacity: 0.6;
   text-decoration: underline;
 }
+.active {
+  color: #007bff;
+  text-decoration: underline;
+  font-weight: 700;
+}
