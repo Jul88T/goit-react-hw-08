@@ -36,6 +36,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
     >
       <Form className={styles.form}>
+        <h2 className={styles.title}>Your Contacts</h2>
         <label className={styles.label}>
           Name:
           <Field

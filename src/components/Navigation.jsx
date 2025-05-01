@@ -8,14 +8,17 @@ const Navigation = () => {
 
   return (
     <nav className={styles.nav}>
-      <Link to="/" className={styles.link}>
-        Home
-      </Link>
-      {isLoggedIn && (
-        <Link to="/contacts" className={styles.link}>
-          Contacts
+      <div className={styles.leftSide}>
+        <Link to="/" className={styles.logo}>
+          Phonebook
         </Link>
-      )}
+
+        {isLoggedIn && (
+          <Link to="/contacts" className={styles.link}>
+            Contacts
+          </Link>
+        )}
+      </div>
     </nav>
   );
 };

@@ -1,13 +1,15 @@
 .authNav {
   display: flex;
-  gap: 20px;
+  gap: 40px;
 }
 
 .link {
-  color: white;
+  color: #1e1e1e;
   text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
 .link:hover {
+  opacity: 0.6;
   text-decoration: underline;
 }

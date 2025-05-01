@@ -17,7 +17,7 @@ const ContactList = ({ contacts }) => {
   );
 
   return (
-    <div>
+    <div className={styles.contactContainer}>
       {filteredContacts.length > 0 ? (
         <ul className={styles.contactList}>
           {filteredContacts.map((contact) => (
@@ -35,7 +35,7 @@ const ContactList = ({ contacts }) => {
           ))}
         </ul>
       ) : (
-        <p>No contacts found</p>
+        <p className={styles.contacts}>No contacts found</p>
       )}
     </div>
   );
