@@ -1,11 +1,15 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { register } from "../redux/auth/operations";
 import styles from "./RegistrationForm.module.css";
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
 
   const initialValues = {
     name: "",
@@ -23,9 +27,21 @@ const RegistrationForm = () => {
       .required("Password is required"),
   });
 
-  const handleSubmit = (values, { resetForm }) => {
-    dispatch(register(values));
-    resetForm();
+  const handleSubmit = async (values, { resetForm }) => {
+    try {
+      setErrorMessage("");
+      const resultAction = await dispatch(register(values));
+
+      if (register.fulfilled.match(resultAction)) {
+        resetForm();
+        navigate("/contacts");
+      } else {
+        setErrorMessage(resultAction.payload || "Registration failed.");
+      }
+      // eslint-disable-next-line no-unused-vars
+    } catch (error) {
+      setErrorMessage("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -36,6 +52,10 @@ const RegistrationForm = () => {
     >
       <Form className={styles.form}>
         <h2 className={styles.title}>Register</h2>
+
+        {errorMessage && (
+          <div className={styles.errorMessage}>{errorMessage}</div>
+        )}
 
         <label htmlFor="name" className={styles.label}>
           Username:

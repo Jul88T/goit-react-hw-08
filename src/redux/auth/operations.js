@@ -19,7 +19,14 @@ export const register = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      if (error.response?.status === 400) {
+        return thunkAPI.rejectWithValue(
+          "A user with this email already exists. Please try again."
+        );
+      }
+      return thunkAPI.rejectWithValue(
+        "Registration failed. Please try again later."
+      );
     }
   }
 );
